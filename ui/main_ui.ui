@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1273</width>
+    <height>711</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,3">
+    <property name="spacing">
+     <number>7</number>
+    </property>
+    <property name="leftMargin">
+     <number>11</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMaximumSize</enum>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMaximumSize</enum>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Anzahl Samples:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_t">
+            <property name="text">
+             <string>Messzeit:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_n">
+            <property name="text">
+             <string>Anzahl Perioden:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Faktor:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Offset:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLineEdit" name="lineEdit_n_samp">
+            <property name="toolTip">
+             <string>Anzahl Samples des Signalgenerator in 2er Pozenten</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_t_mess">
+            <property name="toolTip">
+             <string>Messzeit des gesammten Signals</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_n_periods">
+            <property name="toolTip">
+             <string>Anzahl Perioden des ersten Signals</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_faktor">
+            <property name="toolTip">
+             <string>Faktor über das gesammte Signal</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_offset">
+            <property name="toolTip">
+             <string>Offset des Signals in Volt</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_anteile">
+        <property name="toolTip">
+         <string>Zeigt die Anteile der Fourierreihe als Einzelplots</string>
+        </property>
+        <property name="text">
+         <string>Anteile sichtbar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMaximumSize</enum>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btn_add_sig">
+          <property name="toolTip">
+           <string>Neues Signal zur Liste hinzufügen</string>
+          </property>
+          <property name="text">
+           <string>Signal hinzufügen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_del_sig">
+          <property name="toolTip">
+           <string>Letztes Signal aus der Liste löschen</string>
+          </property>
+          <property name="text">
+           <string>Signal löschen</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_make_sig">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Fourierreihe erstellen und Signalsgenerator konfigurieren</string>
+        </property>
+        <property name="text">
+         <string>Erzeuge Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1677721</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Funktionen in der Tabelle werden zur Fourierreihe addiert</string>
+        </property>
+        <property name="statusTip">
+         <string>Mögliche Signale: sin, cos, square, triangle, rampup, rampdown</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>60</number>
+        </attribute>
+        <row>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </row>
+        <column>
+         <property name="text">
+          <string notr="true">func</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>F</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>P</string>
+         </property>
+        </column>
+        <item row="0" column="0">
+         <property name="text">
+          <string>sin</string>
+         </property>
+        </item>
+        <item row="0" column="1">
+         <property name="text">
+          <string>1</string>
+         </property>
+        </item>
+        <item row="0" column="2">
+         <property name="text">
+          <string>10</string>
+         </property>
+        </item>
+        <item row="0" column="3">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_start">
+        <property name="toolTip">
+         <string>Signalgenerator und Osziloskop starten</string>
+        </property>
+        <property name="text">
+         <string>Starte Messung</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Maximum</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
+      <property name="spacing">
+       <number>7</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0,0,0">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Verstärkung:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_verstaerkung"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>dB     Phasenversatz:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_phase"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>°</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_1">
+         <attribute name="title">
+          <string>Plots einzeln</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,0">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>F min</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="horizontalSlider_1">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>F max</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Plots kombiniert</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,0">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_21"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>F min</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="horizontalSlider_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>F max</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1273</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="actionNeu"/>
+    <addaction name="actionConfig_speichern"/>
+    <addaction name="actionConfig_laden"/>
+    <addaction name="separator"/>
+    <addaction name="actionExport_als_png"/>
+    <addaction name="actionExport_als_csv"/>
+    <addaction name="separator"/>
+    <addaction name="actionSchliessen"/>
+   </widget>
+   <widget class="QMenu" name="menuBearbeiten">
+    <property name="title">
+     <string>Bearbeiten</string>
+    </property>
+    <addaction name="actionAlle_Signale_del"/>
+    <addaction name="actionErweiterte_Fourierreihe"/>
+   </widget>
+   <widget class="QMenu" name="menuEinstellungen">
+    <property name="title">
+     <string>Einstellungen</string>
+    </property>
+    <widget class="QMenu" name="menuKanal_w_hlen">
+     <property name="title">
+      <string>Signalgenerator Kanal wählen</string>
+     </property>
+     <addaction name="actionKannal_1"/>
+     <addaction name="actionKannal_2"/>
+    </widget>
+    <addaction name="actionAD_verbinden"/>
+    <addaction name="menuKanal_w_hlen"/>
+    <addaction name="actionAnzahl_Samples_nur_2er_Potenzen"/>
+    <addaction name="separator"/>
+    <addaction name="actionPlot_Ordinate_beschriften"/>
+    <addaction name="actionPlot_Abszisse_beschriften"/>
+   </widget>
+   <widget class="QMenu" name="menuAnsicht">
+    <property name="title">
+     <string>Ansicht</string>
+    </property>
+    <addaction name="actionDark_Mode"/>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuBearbeiten"/>
+   <addaction name="menuAnsicht"/>
+   <addaction name="menuEinstellungen"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAlle_Signale_del">
+   <property name="text">
+    <string>Alle Signale löschen</string>
+   </property>
+  </action>
+  <action name="actionConfig_speichern">
+   <property name="text">
+    <string>Konfiguration speichern</string>
+   </property>
+  </action>
+  <action name="actionConfig_laden">
+   <property name="text">
+    <string>Konfiguration laden</string>
+   </property>
+  </action>
+  <action name="actionSchliessen">
+   <property name="text">
+    <string>Schliessen</string>
+   </property>
+  </action>
+  <action name="actionExport_als_csv">
+   <property name="text">
+    <string>Export als .csv</string>
+   </property>
+  </action>
+  <action name="actionExport_als_png">
+   <property name="text">
+    <string>Export als .png</string>
+   </property>
+  </action>
+  <action name="actionDark_Mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dark Mode</string>
+   </property>
+   <property name="toolTip">
+    <string>Stil der Anwendung</string>
+   </property>
+   <property name="statusTip">
+    <string>Wird nach abspeichern der Konfiguration und neustart der Applikation übernommen</string>
+   </property>
+  </action>
+  <action name="actionAD_verbinden">
+   <property name="text">
+    <string>Analog Discovery verbinden</string>
+   </property>
+  </action>
+  <action name="actionErweiterte_Fourierreihe">
+   <property name="text">
+    <string>Konvertiere zu Sinusreihe</string>
+   </property>
+  </action>
+  <action name="actionKannal_1">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Kannal 1</string>
+   </property>
+  </action>
+  <action name="actionKannal_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Kannal 2</string>
+   </property>
+  </action>
+  <action name="actionNeu">
+   <property name="text">
+    <string>Neu</string>
+   </property>
+  </action>
+  <action name="actionAnzahl_Samples_nur_2er_Potenzen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Anzahl Samples nur 2er Potenzen</string>
+   </property>
+  </action>
+  <action name="actionPlot_Ordinate_beschriften">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Plot Ordinate beschriften</string>
+   </property>
+  </action>
+  <action name="actionPlot_Abszisse_beschriften">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Plot Abszisse beschriften</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
